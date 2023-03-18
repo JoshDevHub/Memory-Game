@@ -1,9 +1,11 @@
 import "./index.css";
 
+import Header from "./components/Header";
+
 function App() {
   return (
     <div>
-      <h1 className="text-2xl">Hello World</h1>
+      <Header />
     </div>
   );
 }
