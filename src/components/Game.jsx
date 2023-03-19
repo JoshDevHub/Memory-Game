@@ -1,22 +1,16 @@
-import { useState } from "react";
-import uniqid from "uniqid";
+import { useState, useEffect } from "react";
+import callVillagerApi from "../services/animal_crossing_api";
 
 import Card from "./Card";
 
-const MakeCard = () => {
-  const id = uniqid();
-
-  return {
-    id,
-    text: `placeholder ${id}`,
-  };
-};
-
-const initialState = Array.from({ length: 12 }, () => MakeCard());
-
 export default function Game() {
   const [score] = useState(0);
-  const [cards] = useState(initialState);
+  const [cards, setCards] = useState(undefined);
+
+  useEffect(() => {
+    callVillagerApi().then((result) => setCards(result));
+    console.log(cards);
+  }, []);
 
   const randomOrder = () => {
     return cards
@@ -34,10 +28,11 @@ export default function Game() {
         </p>
         <p>Score: {score}</p>
       </div>
-      <div className="flex flex-wrap gap-4">
-        {randomOrder().map((card) => {
-          return <Card key={card.id} text={card.text} />;
-        })}
+      <div className="flex flex-wrap justify-center gap-6">
+        {cards &&
+          randomOrder().map((card) => {
+            return <Card key={card.id} villager={card} />;
+          })}
       </div>
     </div>
   );
