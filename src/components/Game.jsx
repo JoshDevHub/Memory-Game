@@ -7,15 +7,12 @@ export default function Game() {
   const [score] = useState(0);
   const [cards, setCards] = useState(undefined);
 
-  useEffect(() => {
-    callVillagerApi().then((result) => setCards(result));
-    console.log(cards);
-  }, []);
+  useEffect(() => callVillagerApi().then((result) => setCards(result)), []);
 
   const randomOrder = () => {
     return cards
-      .map((value) => ({ value, sort: Math.random() }))
-      .sort((a, b) => a.sort - b.sort)
+      .map((value) => ({ value, sortBy: Math.random() }))
+      .sort((a, b) => a.sortBy - b.sortBy)
       .map(({ value }) => value);
   };
 
