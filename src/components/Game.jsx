@@ -37,15 +37,21 @@ export default function Game() {
   };
 
   return (
-    <div className="p-8">
-      <div className="mb-4 flex justify-between">
+    <div className="mx-auto max-w-screen-2xl">
+      <div className="mb-4 flex flex-col items-center">
         <p>
           Earn points by clicking on a character, but don't click on any more
           than once!
         </p>
-        <div>
-          <p>Score: {score}</p>
-          <p>Best Score: {maxScore}</p>
+        <div className="flex gap-6">
+          <p>
+            <span className="font-bold text-green-700">Current Score: </span>
+            {score}
+          </p>
+          <p>
+            <span className="font-bold text-green-700">Best Score: </span>
+            {maxScore}
+          </p>
         </div>
       </div>
       <div className="flex flex-wrap justify-center gap-6">
