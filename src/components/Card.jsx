@@ -3,11 +3,14 @@ export default function Card({ villager, handler }) {
 
   return (
     <div
-      className="h-[275px] w-[250px] cursor-pointer rounded-lg border-2 border-black p-2"
+      className="h-[280px] w-[250px] cursor-pointer rounded-lg border
+                 border-neutral-200 p-1 pb-6 text-neutral-800 shadow-xl
+                 transition-all hover:text-green-700 hover:shadow-md
+                 hover:shadow-green-700"
       onClick={handler}
     >
-      <img src={villager.image_uri} className="rounded-lg" />
-      <p>{name}</p>
+      <img src={villager.image_uri} className="rounded-t-lg" />
+      <p className="text-center text-xl font-bold">{name}</p>
     </div>
   );
 }
