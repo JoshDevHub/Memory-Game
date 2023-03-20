@@ -7,7 +7,9 @@ export default function Game() {
   const [score] = useState(0);
   const [cards, setCards] = useState(undefined);
 
-  useEffect(() => callVillagerApi().then((result) => setCards(result)), []);
+  useEffect(() => {
+    callVillagerApi().then((result) => setCards(result));
+  }, []);
 
   const randomOrder = () => {
     return cards
