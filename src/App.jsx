@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div>
+    <div className="flex min-h-screen flex-col bg-emerald-100">
       <Header />
       <Game />
       <Footer />

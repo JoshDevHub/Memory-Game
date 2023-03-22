@@ -4,8 +4,8 @@ export default function Card({ villager, handler }) {
   return (
     <div
       className="h-[230px] w-[200px] cursor-pointer rounded-lg border
-                 border-neutral-200 p-1 pb-6 text-neutral-800 shadow-xl
-                 transition-all hover:text-green-700 hover:shadow-md
+                 border-neutral-200 bg-emerald-50 p-1 pb-6 text-neutral-800
+                 shadow-xl transition-all hover:text-green-700 hover:shadow-md
                  hover:shadow-green-700"
       onClick={handler}
     >

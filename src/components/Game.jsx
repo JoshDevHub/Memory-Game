@@ -37,7 +37,7 @@ export default function Game() {
   };
 
   return (
-    <div className="mx-auto max-w-screen-2xl">
+    <div className="mx-auto max-w-screen-2xl flex-1">
       <div className="mb-4 flex flex-col items-center">
         <p>
           Earn points by clicking on a character, but don't click on any more
